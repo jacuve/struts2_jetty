@@ -7,6 +7,9 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 public class RegistryAction extends ActionSupport {
 
+    private String subject;
+    private Double importe;
+
     @Override
     public String execute() throws Exception {
         setMessage(getText(MESSAGE));
@@ -51,4 +54,12 @@ public class RegistryAction extends ActionSupport {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    public String getSubject() {return subject;}
+
+    public void setSubject(String subject) { this.subject = subject; }
+
+    public Double getImporte() {return importe;}
+
+    public void setImporte(Double importe) { this.importe = importe; }
 }

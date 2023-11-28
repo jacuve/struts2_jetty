@@ -25,5 +25,18 @@ public class InvoiceAction extends ActionSupport  {
         if (invoiceBean.getSubject().isEmpty()) {
             addFieldError("invoiceBean.subject", "El concepto es obligatorio.");
         }
+        if (invoiceBean.getImporte() == null) {
+            addFieldError("invoiceBean.importe", "El importe es obligatorio");
+        } else {
+            String importeText = invoiceBean.getImporte().toString();
+            if (importeText.matches("^[0-9]+(\\.[0-9]+){0,1}$")) {
+                double x = Double.parseDouble(importeText);
+                if (x < 0) {
+                    addFieldError("invoiceBean.importe", "El importe debe ser mayor que 0");
+                }
+            } else {
+                addFieldError("invoiceBean.importe", "El importe tiene que ser un numero decimal valido");
+            }
+        }
     }
 }

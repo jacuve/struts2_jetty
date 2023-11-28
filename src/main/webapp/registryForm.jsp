@@ -23,6 +23,13 @@
         <s:textfield id="subject" name="invoiceBean.subject"/>
       </td>
     </tr>
+    <tr>
+          <td class="evenRow">
+            <s:fielderror fieldName = "invoiceBean.importe" />
+            <s:text name="form.importe.message"/>
+            <s:textfield id="importe" name="invoiceBean.importe"/>
+          </td>
+        </tr>
   <tr>
       <td class="evenRow">
         <s:text name="form.fromDate.message"/>
