@@ -38,5 +38,12 @@ public class InvoiceAction extends ActionSupport  {
                 addFieldError("invoiceBean.importe", "El importe tiene que ser un numero decimal valido");
             }
         }
+
+        if(invoiceBean.getDateFrom() == null){
+            addFieldError("invoiceBean.dateFrom", "La fecha inicial es obligatorio");
+        }
+        if(invoiceBean.getDateTo() == null){
+            addFieldError("invoiceBean.dateTo", "La fecha final es obligatorio");
+        }
     }
 }
