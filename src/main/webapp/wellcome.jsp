@@ -14,20 +14,16 @@
 
     <h1>Resumen de factura: </h1>
     <div>
-    Asunto  : <s:property value="invoiceBean.asunto"/>
+    Asunto  : <s:property value="invoiceBean.subject"/>
     </div>
     <div>
     Importe Bruto : <s:property value="invoiceBean.importe"/>
     </div>
-    <%
-    //Integer importeIva = (Integer)application.getAttribute("invoiceBean.importe") *1.21;
-    //out.println(importeIva);
-    %>
     <div>
-    Iva :
+    Iva : 21%
     </div>
     <div>
-    Total :
+    Total : <s:property value="invoiceBean.importe * 1.21"/>
     </div>
     <div>
     Fecha desde : <s:property value="invoiceBean.dateFrom"/>
